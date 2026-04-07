@@ -17,7 +17,7 @@ const HomeLinkBio = () => {
     {
       id: 3,
       title: "INSTAGRAM",
-      url: "https://www.instagram.com/centralcapitaljeans?igsh=dXV1eDljdm5veWV4",
+      url: "https://www.instagram.com/centralcapitalfitness?igsh=dXV1eDljdm5veWV4",
       image: "/logoInsta.png" 
     }
   ];
