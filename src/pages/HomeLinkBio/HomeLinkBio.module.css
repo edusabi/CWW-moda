@@ -1,0 +1,210 @@
+/* HomeLinkBio.module.css */
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: #fbd4e4; /* Fundo geral */
+  color: #1a1a1a;
+}
+
+.container {
+  width: 100%;
+  max-width: 420px;
+  background-color: #ffc4d9; /* Tom de rosa exato da tela */
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Header com a imagem de fundo e curva */
+.header {
+  position: relative;
+  height: 200px;
+  background-image: url('/logo.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #ffc4d9;
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+}
+
+/* Imagem de Perfil */
+.profileContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: -70px;
+  z-index: 2;
+}
+
+.profilePic {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #ffc4d9;
+}
+
+/* Informações de Texto */
+.info {
+  text-align: center;
+  padding: 15px 20px;
+}
+
+.name {
+  font-size: 32px;
+  font-weight: 500;
+  margin: 0 0 10px 0;
+}
+
+.subtitle {
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: 0;
+  color: #333;
+}
+
+/* Ícones Sociais */
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 8px 0 22px 0;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+/* Botões de Link */
+.linksContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0 20px;
+}
+
+.linkCard {
+  display: flex;
+  align-items: center;
+  background-color: #fff0f5; /* Rosa bem clarinho/branco dos botões */
+  text-decoration: none;
+  color: #000;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.linkCard:hover {
+  transform: scale(1.02);
+}
+
+.linkImage {
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+}
+
+.linkText {
+  flex: 1;
+  /* font-size: 15px; */
+  letter-spacing: 1px;
+  font-weight: 500;
+  padding: 0 15px;
+  text-align: center;
+}
+
+/* =========================================
+   MEDIA QUERIES - RESPONSIVIDADE
+   ========================================= */
+
+/* 📱 CELULARES PEQUENOS (Ex: iPhone SE, telas menores antigas) */
+@media (max-width: 380px) {
+  .header {
+    height: 160px; /* Reduz a área da imagem de fundo */
+  }
+
+  .profileContainer {
+    margin-top: -60px;
+  }
+
+  .profilePic {
+    width: 110px;
+    height: 110px;
+    border-width: 4px;
+  }
+
+  .name {
+    font-size: 26px; /* Fonte menor para não quebrar a linha */
+  }
+
+  .subtitle {
+    font-size: 9px;
+  }
+
+  .socials {
+    gap: 15px;
+    margin: 15px 0;
+  }
+
+  .linkImage {
+    width: 55px;
+    height: 55px;
+  }
+
+  .linkText {
+    font-size: 13px; /* Evita que o texto encoste muito na borda */
+    padding: 0 10px;
+  }
+}
+
+/* 📱 CELULARES PADRÃO E GRANDES (Até 480px) */
+/* O código principal sem media query já lida com isso perfeitamente, 
+   pois a largura é 100% da tela. */
+@media (max-width: 480px) {
+  .container {
+    box-shadow: none; /* Tira a sombra lateral nos celulares, pois ocupa a tela toda */
+  }
+}
+
+/* 💻 TABLETS E DESKTOPS (A partir de 481px) */
+@media (min-width: 481px) {
+  .wrapper {
+    /* Adiciona um espaço (respiro) ao redor do container no computador */
+    padding: 40px 20px; 
+  }
+
+  .container {
+    /* Transforma a tela em um "card" flutuante parecido com um celular */
+    border-radius: 30px; 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); 
+    border: 8px solid #ffffff; /* Simula a borda branca de um aparelho */
+  }
+
+  .header {
+    /* Arredonda o topo da imagem para acompanhar a borda do aparelho */
+    border-top-left-radius: 22px; 
+    border-top-right-radius: 22px;
+  }
+}
+
+/* 🖥️ MONITORES ULTRA WIDE (Telas muito grandes) */
+@media (min-width: 1200px) {
+  .container {
+    transform: scale(1.05); /* Aumenta levemente o tamanho do card em monitores grandes */
+  }
+}
