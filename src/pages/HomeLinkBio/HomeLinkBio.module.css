@@ -10,7 +10,7 @@
 
 .container {
   width: 100%;
-  max-width: 420px;
+  max-width: 360px; /* Diminuído para ficar com proporção mais fiel de celular no PC */
   background-color: #ffc4d9; /* Tom de rosa exato da tela */
   position: relative;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -95,18 +95,19 @@
   flex-direction: column;
   gap: 15px;
   padding: 0 20px;
+  margin-bottom: 30px; /* Dá um respiro visual no final do card */
 }
 
 .linkCard {
   display: flex;
   align-items: center;
-  background-color: #fff0f5; /* Rosa bem clarinho/branco dos botões */
+  background-color: #fff0f5; 
   text-decoration: none;
   color: #000;
-  border-radius: 4px;
-  overflow: hidden;
+  border-radius: 6px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease;
+  padding: 10px 12px; /* Espaço extra para o ícone não grudar na borda */
 }
 
 .linkCard:hover {
@@ -114,14 +115,14 @@
 }
 
 .linkImage {
-  width: 65px;
-  height: 65px;
-  object-fit: cover;
+  width: 35px; /* Ícones bem menores e mais elegantes */
+  height: 35px; 
+  object-fit: contain; /* contain faz com que a imagem se ajuste sem ser cortada */
+  margin-left: 5px;
 }
 
 .linkText {
   flex: 1;
-  /* font-size: 15px; */
   letter-spacing: 1px;
   font-weight: 500;
   padding: 0 15px;
@@ -135,7 +136,7 @@
 /* 📱 CELULARES PEQUENOS (Ex: iPhone SE, telas menores antigas) */
 @media (max-width: 380px) {
   .header {
-    height: 160px; /* Reduz a área da imagem de fundo */
+    height: 160px;
   }
 
   .profileContainer {
@@ -149,7 +150,7 @@
   }
 
   .name {
-    font-size: 26px; /* Fonte menor para não quebrar a linha */
+    font-size: 26px;
   }
 
   .subtitle {
@@ -162,41 +163,36 @@
   }
 
   .linkImage {
-    width: 55px;
-    height: 55px;
+    width: 28px; /* Ícones diminuem proporcionalmente em celulares pequenos */
+    height: 28px;
   }
 
   .linkText {
-    font-size: 13px; /* Evita que o texto encoste muito na borda */
+    font-size: 13px;
     padding: 0 10px;
   }
 }
 
 /* 📱 CELULARES PADRÃO E GRANDES (Até 480px) */
-/* O código principal sem media query já lida com isso perfeitamente, 
-   pois a largura é 100% da tela. */
 @media (max-width: 480px) {
   .container {
-    box-shadow: none; /* Tira a sombra lateral nos celulares, pois ocupa a tela toda */
+    box-shadow: none; 
   }
 }
 
 /* 💻 TABLETS E DESKTOPS (A partir de 481px) */
 @media (min-width: 481px) {
   .wrapper {
-    /* Adiciona um espaço (respiro) ao redor do container no computador */
     padding: 40px 20px; 
   }
 
   .container {
-    /* Transforma a tela em um "card" flutuante parecido com um celular */
     border-radius: 30px; 
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); 
-    border: 8px solid #ffffff; /* Simula a borda branca de um aparelho */
+    border: 8px solid #ffffff; 
   }
 
   .header {
-    /* Arredonda o topo da imagem para acompanhar a borda do aparelho */
     border-top-left-radius: 22px; 
     border-top-right-radius: 22px;
   }
@@ -205,6 +201,7 @@
 /* 🖥️ MONITORES ULTRA WIDE (Telas muito grandes) */
 @media (min-width: 1200px) {
   .container {
-    transform: scale(1.05); /* Aumenta levemente o tamanho do card em monitores grandes */
+    /* O "scale" foi removido daqui para evitar que ficasse gigante no PC */
+    transform: none; 
   }
 }
