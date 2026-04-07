@@ -21,7 +21,7 @@
 .header {
   position: relative;
   height: 200px;
-  background-image: url('/logo.jpeg');
+  background-image: url('/banner.jpeg');
   background-size: cover;
   background-position: center;
 }

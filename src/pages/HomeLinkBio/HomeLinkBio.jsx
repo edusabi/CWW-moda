@@ -7,19 +7,19 @@ const HomeLinkBio = () => {
       id: 1,
       title: "GRUPO DE ATACADO",
       url: "https://chat.whatsapp.com/DH0s9MnN2kD9Fol8GrFRox?mode=gi_t",
-      image:""
+      image:"/logoGrupo.png"
     },
     {
       id: 2,
       title: "FALAR COM VENDEDOR",
       url: "https://wa.me/5581996457525",
-      image: ""
+      image: "/logoZap.png"
     },
     {
       id: 3,
       title: "INSTAGRAM",
       url: "https://www.instagram.com/centralcapitaljeans?igsh=dXV1eDljdm5veWV4",
-      image: "" 
+      image: "/logoInsta.png" 
     }
   ];
 
